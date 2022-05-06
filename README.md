@@ -12,6 +12,7 @@ I developed it with the use of already prepared design.
 
 ## Technology used?
 - Vanilla Javascript
+- SCSS(CSS preprocessor)
 - ejs views template
 - Express.js
 - Mongoose
@@ -25,4 +26,4 @@ I developed it with the use of already prepared design.
 - to run project use "node server.js"
 
 ## Link
-    http://www.zmjb.pl/
+[zmjb.pl](http://www.zmjb.pl/)
