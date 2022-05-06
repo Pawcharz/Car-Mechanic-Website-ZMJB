@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/zmjb_logo.png">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <title>ZMJB - Cennik</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        
+        <%- include('./partials/nav.ejs', {activeEl: "price-list"})%>
+
+        <%- include('./partials/banners/banner-price-list.ejs')%>
+
+
+        <%- include('./partials/popUp-offerDisplay.ejs')%>
+
+        <section class="section-priceOffers">
+
+            <div class="main">
+
+                <button class="btn-slider btn-slider-left"></button>
+    
+                <div class="main-cards">
+
+                    <% offers.forEach(offer => { %>
+                        
+                        <%- include('./partials/priceOffer-card.ejs', {offer: offer})%>
+    
+    
+                    <% }) %>
+    
+                </div>
+                
+                <button class="btn-slider btn-slider-right"></button>
+
+            </div>
+
+        </section>
+
+
+        <section id="below900only" class="section-double-horizontal section-client-preview">
+
+            <div class="main">
+
+                <div class="main-left">
+                    <h4>Zaufanie klientów to najlepsza nagroda.</h4>
+                    <p>Zobacz, czemu klienci do nas wracają.</p>
+                    <button class="btn-primary"><a href="#">Opinie</a></button>
+                </div>
+
+                <img class="main-right" src="images/hand.svg" alt="">
+
+            </div>
+
+        </section>
+
+
+        <%- include('./partials/footer.ejs')%>
+
+
+    </div>
+
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/offerDisplay.js"></script>
+
+</body>
+
+<script src="scripts/price-list.js"></script>
+
+</html>

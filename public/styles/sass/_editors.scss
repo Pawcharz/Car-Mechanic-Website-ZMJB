@@ -1,0 +1,324 @@
+.offerEditor {
+    position: fixed;
+    height: calc(100% - 6rem);
+    width: 100%;
+    max-width: $wrapper-max-width;
+
+    top: 0;
+    padding-top: 6rem;
+    z-index: 999;
+
+    backdrop-filter: blur(8px);
+    background-color: rgba(white, 0.05);
+    display: none;
+
+    &-outter {
+
+        height: calc(80% - 6rem);
+        width: calc(80% - 6rem);
+            
+        background-color: whitesmoke;
+        border-radius: 2.5rem 1.25rem 2.5rem 2.5rem;
+        filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+        
+        padding: 3rem;
+        margin: auto;
+        display: flex;
+    
+        .offerEditor-main {
+            
+            height: 100%;
+            width: 100%;
+            margin: auto;
+
+            color: black;
+
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            grid-template-rows: auto auto 2fr;
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+
+
+
+            .editorField {
+                height: fit-content;
+                width: 100%;
+                margin: 0 auto 0 0;
+
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+
+                font-weight: 600;
+
+                h1, h2, h3, h4, h5, h6{
+                    margin: 0 auto 0 0;
+                    font-weight: 500;
+                }
+                input {
+                    width: calc(100% - 0.75rem);
+                    padding: 0.25rem;
+                    font-weight: 500;
+                    font-size: 1.25rem;
+
+                    font-family: $font-heading;
+
+                    border: 0.125rem rgba(#00bcf2, 0.5) solid;
+                    border-radius: 0.5rem;
+                }
+                input:focus {
+                    outline: none;
+                    border: 0.125rem rgba(#00bcf2, 0.8) solid;
+                }
+                
+                textarea {
+                    height: 60%;
+                    width: calc(100% - 0.75rem);
+                    padding: 0.25rem;
+                    margin: 0 auto auto 0;
+
+                    overflow-y: hidden;
+
+                    font-weight: 500;
+                    font-size: 1.125rem;
+                    text-align: justify;
+
+                    resize: none;
+                    border: 0.125rem rgba(#00bcf2, 0.5) solid;
+                    border-radius: 0.5rem;
+                }
+                textarea::-webkit-scrollbar {
+                    width: 0.25rem;
+                    visibility: hidden;
+
+                    padding-right: 2rem;
+                }
+                textarea::-webkit-scrollbar-thumb {
+                    background: rgba(#888, 0.5);
+                    border-radius: 0.125rem;
+                }
+                textarea:focus {
+                    outline: none;
+                    border: 0.125rem rgba(#00bcf2, 0.8) solid;
+                }
+            }
+            &-image {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-gap: 1rem;
+                #image {
+                    grid-column: 1 / 2;
+
+                    height: 8rem;
+                    width: 8rem;
+                    margin: 0;
+
+                    object-fit: cover;
+
+                    border-radius: 100%;
+                    border: 3px solid #203647;
+                }
+
+                .editorField {
+                    grid-column: 2 / 3;
+
+                    input[type="file"] {
+                        display: none;
+                    }
+                    input[type="file"] + label {    
+                        height: 2rem;
+                        width: fit-content;
+                        max-width: calc(80% - 2rem);
+                        padding: 0.5rem 1rem;
+                        margin: auto auto auto 0;
+    
+                        background-color: whitesmoke;
+                        border: 3px solid #203647;
+                        border-radius: 0.125rem;
+                        cursor: pointer;
+    
+                        display: flex;
+    
+                        p {
+                            width: 100%;
+                            margin: auto;
+    
+                            font-family: $font-text;
+                            font-weight: 500;
+                            font-size: 1.125rem;
+                            color: black;
+                        } 
+                    }
+                    input[type="file"] + label:hover {
+                        background-color: rgba(#4DA8DA, 0.25);
+                    }
+                    .fileInput-picked + label{
+                        background-color: rgba(#4DA8DA, 0.75) !important;
+                    }
+                    .fileInput-picked + label:hover{
+                        background-color: rgba(#4DA8DA, 1) !important;
+                    }
+                    #filename {
+                        max-width: 16rem;
+                        margin: auto auto auto 0;
+                        z-index: 2;
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                    }
+
+                }
+            }
+            &-header {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            &-shortData {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+
+                height: 100%;
+                width: 100%;
+
+
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                button {
+                    height: fit-content;
+                    width: fit-content;
+                    margin: auto 1rem 1rem auto;
+                    
+                    font-family: $font-heading;
+
+                    border: 3px solid #4DA8DA;
+                    border-radius: 1.75rem;
+                    padding: 0.75rem 1.5rem;
+
+                    h1, h2, h3, h4, h5, h6{
+                        font-weight: 600;
+                    }
+                }
+
+            }
+            &-description {
+                grid-column: 2 / 3;
+                grid-row: 1 / 4;
+
+                height: calc(100% - 1rem);
+                width: calc(100% - 1rem);
+                padding: 0.5rem;
+
+                border-radius: 0.5rem;
+                box-shadow: 0 0 8px 0px rgba(#12232E, 0.5);
+                clip-path: polygon(0.25% -50%, 99.75% -50%, 99.75% 150%, 0.25% 150%);
+
+                display: flex;
+
+                .editorField {
+                    height: 100%;
+                }
+            }
+            
+
+            
+            @media only screen and (max-width: 750px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr auto;
+                grid-row-gap: 2rem;
+                &-image {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+    
+                    .editorField {
+
+                        #filename {
+                            max-width: 12rem;
+                        }
+                    }
+                    
+                }
+                &-header {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+                }
+                &-shortData {
+                    grid-column: 1 / 2;
+                    grid-row: 4 / 5;
+
+                    display: flex;
+                    flex-direction: column;
+                    
+
+                    button {
+                        grid-column: 2 / 3;
+                        grid-row: 2 / 3;
+
+                        margin: 1rem 1rem 1rem auto;
+                    }
+
+                }
+                &-description {
+                    grid-column: 1 / 2;
+                    grid-row: 3 / 4;
+
+                    textarea {
+                        height: 10rem !important;
+                    }
+                }
+
+            }
+            @media only screen and (max-width: 500px) {
+                grid-row-gap: 0.75rem;
+
+                &-shortData {
+
+                    button {
+                        margin: 1rem auto;
+                    }
+
+                }
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+            width: calc(90% - 6rem);
+        }
+        @media only screen and (max-width: 750px) {
+            padding: 3rem 2.5rem;
+            .offerEditor-main {
+                padding: 0 0.5rem;
+                overflow-y: scroll;
+            }
+            .offerEditor-main::-webkit-scrollbar {
+                width: 0.5rem;
+                visibility: hidden;
+            }
+            .offerEditor-main::-webkit-scrollbar-thumb {
+                background: rgba(#888, 0.5);
+                border-radius: 0.125rem;
+            }
+
+        }
+        @media only screen and (max-width: 500px) {
+            height: calc(90% - 6rem);
+            width: calc(90% - 4rem);
+            padding: 3rem 2rem 2.5rem 2rem;
+        }
+
+        .btn-close {
+            height: 3rem;
+            width: 3rem;
+
+            position: absolute;
+            top: 0.125rem;
+            right: 0.125rem;
+        }
+    }
+}
+.offerEditor-active {
+    display: flex;
+}

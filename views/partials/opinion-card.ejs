@@ -1,0 +1,18 @@
+<div class="opinion-card" data-db-id="<%= opinion.id %>">
+    <h4 class="opinion-card-name"><%= opinion.name %></h4>
+    <h4 class="opinion-card-rating">
+
+        <% for (let i = 0; i < 5; i++) {
+            if(i < opinion.rating) { %>
+                ★
+            <% }
+            else { %>
+                ☆
+            <% }
+        }%>
+
+
+        
+    </h4>
+    <p class="opinion-card-content"><%= opinion.content %></p>
+</div>

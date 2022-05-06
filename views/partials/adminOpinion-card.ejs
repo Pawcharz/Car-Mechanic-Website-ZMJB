@@ -1,0 +1,45 @@
+<div class="adminOpinion-card">
+
+    <div class="headerContainer">
+        <h4 id="name"><%= opinion.name %> </h4>
+
+        <h4 id="rating">
+            <% for (let i = 0; i < 5; i++) {
+                if(i < opinion.rating) { %>
+                    ★
+                <% }
+                else { %>
+                    ☆
+                <% }
+            }%>
+        </h4>
+
+    </div>
+
+    <div class="editMenu">
+
+        
+        <button class="btn-delete" data-id="<%= opinion.id %>" title="usuń opinię"></button>
+        
+
+        <% if(opinion.accepted != true) { %>
+
+        <form method="POST" action="showOpinion">
+            <input name="id" type="hidden" value="<%= opinion.id %>">
+            <button class="btn-show" title="pokaż opinię"></button>
+        </form>
+
+        <% } else {%>
+
+        <form method="POST" action="hideOpinion">
+            <input name="id" type="hidden" value="<%= opinion.id %>">
+            <button class="btn-hide" title="ukryj opinię"></button>
+        </form>
+
+        <% } %>
+    </div>
+
+    <h5 id="content">Opis: <span><%= opinion.content %></span></h5>
+
+
+</div>

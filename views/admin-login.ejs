@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/zmjb_logo.png">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <title>ZMJB - Logowanie Do Panelu Administratorskiego</title>
+</head>
+<body>
+
+    <div id="wrapper-adminLogin" class="wrapper">
+
+        <section class="section-login">
+
+            <form class="form-standard" method="POST" action="/adminLogin">
+                <h4 class="header-main">Logowanie</h4>
+        
+                <div class="form-standard-main">
+        
+                    <div class="inputBoxes-container">
+        
+                        <div class="inputBoxes-container-box">
+                            <h6>Hasło</h6>
+                            <input name="password" type="password" required>
+                            <h6 id="errorMessage"><%= msg %></h6>
+                        </div>
+
+                    </div>
+                </div>
+                
+                
+                <button id="passwordChange" type="button">
+                    <a href="/adminPanel-passwordChange"><h3>Zmień hasło</h3></a>
+                </button>
+                
+                    
+                <button id="confirmButton"><h3>Potwierdź</h3></button>
+            </form>
+
+        </section>
+
+    </div>
+
+    
+</body>
+</html>

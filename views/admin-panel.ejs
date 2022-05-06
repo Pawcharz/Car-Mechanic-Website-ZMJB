@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/zmjb_logo.png">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <title>ZMJB - Panel Administratorski</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+
+        <%- include('./partials/nav.ejs', {activeEl: ""})%>
+        
+        <%- include('./partials/banners/banner-admin.ejs')%>
+
+
+        <%- include('./partials/popUp-offerEditor.ejs')%>
+        <%- include('./partials/popUp-offerDeletion.ejs')%>
+
+        <%- include('./partials/popUp-opinionDeletion.ejs')%>
+
+        <section class="section section-admin-offers">
+
+            <form class="form-standard" method="POST" action="addOffer" enctype="multipart/form-data">
+
+                <h4 class="header-main">Tworzenie oferty</h4>
+
+                <div class="form-standard-main">
+
+                    <div class="inputBoxes-container">
+
+                        <div class="inputBoxes-container-box">
+                            <h6>Nazwa usługi</h6>
+                            <input name="name" type="text" required>
+                        </div>
+                        
+                        <div class="inputBoxes-container-box">
+                            <h6>Koszt usługi</h6>
+                            <input name="price" type="number" required>
+                        </div>
+
+                        <div class="inputBoxes-container-box">
+                            <h6>Czas wykonania</h6>
+                            <input name="time" type="number" required>
+                        </div>
+
+                        <div class="inputBoxes-container-box">
+                            <h6>Zdjęcie</h6>
+                            <input id="imageInput-form" name="image" type="file" accept="image/*" required>
+                            <label for="imageInput-form"><p>Wybierz zdjęcie</p></label>
+                            <h6 id="filename">brak zdjęcia</h6>
+                        </div>
+
+                    </div>
+
+                    <div class="textarea-container-box">
+                        <h6>Opis usługi</h6>
+                        <textarea name="description" required></textarea>
+                    </div>
+                    
+                </div>
+
+                <button><h2>Dodaj</h2></button>
+            </form>
+
+            <div class="main">
+
+                <% offers.forEach(offer => { %>
+                    
+                    <%- include('./partials/adminOffer-card.ejs', {offer: offer})%>
+
+
+                <% }) %>
+
+            </div>
+
+        </section>
+
+        <section class="section section-admin-opinions">
+
+            <div class="main">
+
+                <% opinions.forEach(opinion => { %>
+                    
+                    <%- include('./partials/adminOpinion-card.ejs', {opinion: opinion})%>
+
+
+                <% }) %>
+
+            </div>
+
+        </section>
+        
+
+        <%- include('./partials/footer.ejs')%>
+
+
+    </div>
+
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/formValidations/addOfferForm.js"></script>
+
+    <script src="scripts/offerEditor.js"></script>
+    <script src="scripts/offerDeletion.js"></script>
+    <script src="scripts/opinionDeletion.js"></script>
+</body>
+
+</html>

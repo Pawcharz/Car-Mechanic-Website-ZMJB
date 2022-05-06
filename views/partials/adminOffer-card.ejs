@@ -1,0 +1,17 @@
+<div class="adminOffer-card">
+
+    <img class="adminOffer-card-img" src="data:image/<%=offer.img.contentType%>;base64, <%=offer.img.data.toString('base64')%>" alt="">
+    
+    <div class="adminOffer-card-text">
+        <h4 id="name"><%= offer.name %></h4>
+        <h6 id="description">Opis: <span id="description-value"><%= offer.description %></span></h6>
+        <h5 id="time">Szacowany czas trwania: <span id="time-value"><%= offer.time %></span> godz.</h5>
+    </div>
+
+    <h2 class="adminOffer-card-price"><span><%= offer.price %></span>zł</h2>
+    
+    <div class="editMenu">
+        <button class="btn-delete" data-id="<%= offer.id %>"></button>
+        <button class="btn-edit" data-id="<%= offer.id %>"></button>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/zmjb_logo.png">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <title>ZMJB - Oferta</title>
+</head>
+
+<body>
+    
+    <div class="wrapper">
+
+
+        <%- include('./partials/nav.ejs', {activeEl: "offer"})%>
+
+        <%- include('./partials/banners/banner-offer.ejs')%>
+
+        
+        <%- include('./partials/popUp-offerDisplay.ejs')%>
+
+        <section class="section-offers">
+            <div class="main">
+
+                <button class="btn-slider btn-slider-left"></button>
+    
+                <div class="main-cards">
+
+                    <% offers.forEach(offer => { %>
+                        
+                        <%- include('./partials/offer-card.ejs', {offer: offer})%>
+    
+    
+                    <% }) %>
+    
+                </div>
+                
+                <button class="btn-slider btn-slider-right"></button>
+
+            </div>
+        </section>
+
+
+        <section id="below900only" class="section-double-horizontal section-prices-preview">
+
+            <div class="main">
+                <img class="main-left" src="images/Wallet.svg" alt="">
+
+                <div class="main-right">
+                    <h4>Z nami, Twoje pieniądze są bezpieczne.</h4>
+                    <p>Cenę usługi zawsze znasz przed jej rozpoczęciem.</p>
+                    <button class="btn-primary"><a href="#">Cennik</a></button>
+                </div>
+            </div>
+            
+
+        </section>
+
+
+        <%- include('./partials/footer.ejs')%>
+
+
+
+    </div>
+
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/offerDisplay.js"></script>
+
+</body>
+
+<script src="scripts/offers.js"></script>
+
+</html>

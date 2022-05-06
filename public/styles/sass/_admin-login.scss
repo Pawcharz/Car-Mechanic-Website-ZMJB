@@ -1,0 +1,94 @@
+#wrapper-adminLogin {
+    height: 100vh;
+    width: 100%;
+    max-height: none;
+    max-width: none;
+
+    display: flex;
+
+
+    .section-login {
+        height: 100%;
+        max-width: 42rem;
+        width: 80%;
+        margin: auto;
+
+        display: flex;
+        .form-standard {
+            min-height: 0;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr auto;
+
+            .header-main {
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+
+                margin: 2rem auto 2rem calc(5% + 1rem);
+            }
+
+            &-main {
+                grid-column: 1 / 3;
+                grid-row: 2 / 3;
+
+                display: flex;
+                flex-direction: column;
+                .inputBoxes-container {
+
+                    &-box {
+
+                        #errorMessage {
+                            color: red;
+                            margin: 0.5rem auto auto 0;
+                        }
+                    }
+                }
+            }            
+            #passwordChange {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+
+                border-width: 3px;
+                padding: 0.4rem 0.8rem;
+                margin: auto auto 2rem 10%;
+                a {
+                    font-size: 0.6rem;
+                }
+            }
+            #confirmButton {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+
+                margin: 2rem 10% 2rem auto;
+            }
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr auto auto;
+
+                .header-main {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+                &-main {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+                }   
+                #confirmButton {
+                    grid-column: 1 / 2;
+                    grid-row: 3 / 4;
+                    margin: 1rem auto;
+                }   
+                #passwordChange {
+                    grid-column: 1 / 2;
+                    grid-row: 4 / 5;
+                    margin: 1rem auto;
+                }
+            }
+        }
+    }
+
+}
+

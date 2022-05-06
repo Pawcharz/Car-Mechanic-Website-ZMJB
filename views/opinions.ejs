@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/zmjb_logo.png">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <title>ZMJB - Opinie</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+        <%- include('./partials/nav.ejs', {activeEl: "opinions"})%>
+
+        <%- include('./partials/banners/banner-opinions.ejs')%>
+        
+
+        <%- include('./partials/popUp-opinionDisplay.ejs')%>
+
+        <section class="section-opinions">
+            <div class="main">
+
+                <button class="btn-slider btn-slider-left"></button>
+
+                <div class="main-cards">
+
+                <% opinions.forEach(opinion => { %>
+                
+                    <%- include('./partials/opinion-card.ejs', {opinion: opinion})%>
+
+
+                <% }) %>
+
+                </div>
+
+                <button class="btn-slider btn-slider-right"></button>
+
+            </div>
+
+            <form id="form-addOffer" class="form-standard" method="POST" action="/createOpinion" onsubmit="return validateForm();">
+                <h4 class="header-main">Dodaj opinię</h4>
+
+                <div class="form-standard-main">
+                    <div class="inputBoxes-container">
+
+                        <div class="inputBoxes-container-box">
+                            <h6>Imię i nazwisko</h6>
+                            <input name="name" type="text">
+                            <div class="message"></div>
+                        </div>
+
+                        <div class="inputBoxes-container-rating">
+                            <h6>Jak oceniasz jakość usług</h6>
+                            <div class="inputBoxes-container-rating-main">
+
+                                <input id="star-5" type="radio" name="rating" value="5"/>
+                                <label for="star-5"><span class="icon">★</span></label>
+
+                                <input id="star-4" type="radio" name="rating" value="4"/>
+                                <label for="star-4"><span class="icon">★</span></label>
+                                
+                                <input id="star-3" type="radio" name="rating" value="3"/>
+                                <label for="star-3"><span class="icon">★</span></label>
+
+                                <input id="star-2" type="radio" name="rating" value="2"/>
+                                <label for="star-2"><span class="icon">★</span></label>
+
+                                <input id="star-1" type="radio" name="rating" value="1"/>
+                                <label for="star-1"><span class="icon">★</span></label>
+
+                            </div>
+                            <div class="message"></div>
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="textarea-container-box">
+                        <h6>Tu wpisz wiadomość</h6>
+                        <textarea name="content"></textarea>
+                        <div class="message"></div>
+                    </div>
+                    
+                </div>
+                
+                <button><h2>Dodaj</h2></button>
+            </form>
+        </section>
+
+
+
+        <section id="below900only" class="section-double-horizontal section-prices-preview">
+
+            <div class="main">
+                <img class="main-left" src="images/Wallet.svg" alt="">
+
+                <div class="main-right">
+                    <h4>Z nami, Twoje pieniądze są bezpieczne.</h4>
+                    <p>Cenę usługi zawsze znasz przed jej rozpoczęciem.</p>
+                    <button class="btn-primary"><a href="#">Cennik</a></button>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <%- include('./partials/footer.ejs')%>
+
+        
+    </div>
+
+    <script src="scripts/formValidations/addOpinionForm.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/opinionDisplay.js"></script>
+    
+</body>
+<script src="scripts/opinions.js"></script>
+
+</html>

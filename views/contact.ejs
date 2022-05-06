@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/zmjb_logo.png">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <title>ZMJB - Kontakt</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+
+        <%- include('./partials/nav.ejs', {activeEl: "contact"})%>
+     
+        
+        <%- include('./partials/banners/banner-contact.ejs')%>
+
+
+
+        <section class="section section-contact">
+            <div class="main">
+
+                <div class="contactInfo">
+
+                    <div class="contactInfo-box">
+                        <img src="images/adres-icon.svg" alt="">
+                        <h4>
+                            <span>Nazwa Zakładu</span>
+                            <span>ul. Wojska Polskiego 78</span>
+                            <span>Suwałki 16-400</span>
+                        </h4>
+                    </div>
+    
+                    <div class="contactInfo-box">
+                        <img src="images/telephone-icon.svg" alt="">
+                        <h4>
+                            <span>Tel. 604 584 330</span>
+                        </h4>
+                    </div>
+    
+                    <div class="contactInfo-box">
+                        <img src="images/email-icon.svg" alt="">
+                        <h4>
+                            <span>E-mail: kazik@naprawa.pl</span>
+                        </h4>
+                    </div>
+                   
+                </div>
+
+                <form class="form-standard" method="POST" action="/contactForm" onsubmit="return validateForm();">
+                    <h4 class="header-main">Formularz kontaktowy</h4>
+
+                    <div class="form-standard-main">
+
+                        <div class="inputBoxes-container">
+
+                            <div class="inputBoxes-container-box">
+                                <h6>Imię i nazwisko</h6>
+                                <input name="name" type="text">
+                                <p class="message"></p>
+                            </div>
+                            
+                            <div class="inputBoxes-container-box">
+                                <h6>Numer telefonu</h6>
+                                <input name="phoneNr" type="text">
+                                <p class="message"></p>
+                            </div>
+    
+                            <div class="inputBoxes-container-box">
+                                <h6>Adres e-mail</h6>
+                                <input name="email" type="text">
+                                <p class="message"></p>
+                            </div>
+                        </div>
+
+                        <div class="textarea-container-box">
+                            <h6>Tu wpisz wiadomość</h6>
+                            <textarea name="message"></textarea>
+                            <p class="message"></p>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <button><h2>Wyślij</h2></button>
+                </form>
+
+
+            </div>
+        </section>
+        
+
+        <%- include('./partials/footer.ejs')%>
+
+
+    </div>
+    
+    <script src="scripts/formValidations/contactForm.js"></script>
+    <script src="scripts/nav.js"></script>
+
+</body>
+
+</html>

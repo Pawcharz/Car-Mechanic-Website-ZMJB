@@ -1,0 +1,58 @@
+<div class="offerEditor">
+
+    <div class="offerEditor-outter">
+
+    
+        <form class="offerEditor-main" method="post" action="/updateOffer" enctype="multipart/form-data">
+
+            <input id="id" name="id" type="hidden" value="">
+
+            <div class="offerEditor-main-image">
+                <img id="image" src="" alt="Obrazek">
+
+
+                <div class="editorField">
+                    <h4 class="editorField-header">Zdjęcie</h4>
+                    <input id="imageInput" name="image" type="file" accept="image/*">
+                    <label for="imageInput"><p>Zmień zdjęcie</p></label>
+                    <h6 id="filename">brak zdjęcia</h6>
+                </div>
+                
+            </div>
+
+            <div class="offerEditor-main-header editorField">
+                <h4 class="editorField-header">Nazwa</h4>
+                <input id="name" name="name" class="editorField-content" type="text" required>
+            </div>
+
+            <div class="offerEditor-main-shortData">
+                
+                <div class="editorField">
+                    <h4 class="editorField-header">Przewidywany czas realizacji(w godzinach)</h4>
+                    <input id="time" name="time" class="editorField-content" type="number" required>
+                </div>
+
+                <div class="editorField">
+                    <h4 class="editorField-header">Cena(w złotych)</h4>
+                    <input id="price" name="price" class="editorField-content" type="number" required>
+                </div>
+
+                <button type="submit" id="btn-accept"><h3>Aktualizuj</h3></button>
+            </div>
+
+            <div class="offerEditor-main-description">
+
+                <div class="editorField">
+                    <h3 class="editorField-header">Opis</h3>
+                    <textarea id="description" name="description" class="editorField-content" required></textarea>
+                </div>
+
+            </div>
+
+            
+        </form>
+
+        <button type="button" class="btn-close"></button>
+    </div>
+    
+</div>

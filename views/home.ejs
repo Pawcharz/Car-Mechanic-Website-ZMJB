@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/zmjb_logo.png">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <title>ZMJB - Strona Główna</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+        <%- include('./partials/nav.ejs', {activeEl: "home"})%>
+
+
+        <%- include('./partials/banners/banner-home.ejs')%>
+
+
+
+        <section class="section-double-horizontal section-prices-preview section-shadow">
+
+            <div class="main">
+                <img class="main-left" src="images/Wallet.svg" alt="">
+
+                <div class="main-right">
+                    <h4>Z nami, Twoje pieniądze są bezpieczne.</h4>
+                    <p>Cenę usługi zawsze znasz przed jej rozpoczęciem.</p>
+                    <button class="btn-primary"><a href="#">Cennik</a></button>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <section class="section-double-horizontal section-client-preview ">
+
+            <div class="main">
+
+                <div class="main-left">
+                    <h4>Zaufanie klientów to najlepsza nagroda.</h4>
+                    <p>Zobacz, czemu klienci do nas wracają.</p>
+                    <button class="btn-primary"><a href="#">Opinie</a></button>
+                </div>
+
+                <img class="main-right" src="images/hand.svg" alt="">
+
+            </div>
+
+        </section>
+
+        <section class="section-double-horizontal section-car section-shadow">
+
+            <div class="main">
+
+                <div class="main-left">
+                    <h4>Te auta bardzo lubimy naprawiać!</h4>
+                    <p>Wiemy jak zbudowane są samochody, jednak auta marki Volkswagen i Audi znamy jak własną kieszeń.</p>
+                </div>
+
+                <div class="main-right">
+                    <img src="images/circles-logo.svg" alt="">
+                    <img src="images/w-logo.svg" alt="">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section-double-horizontal section-contact-preview">
+
+            <div class="main">
+
+                <div class="main-left">
+                    <h4>Tu jesteśmy!</h4>
+
+                    <div class="section-contact-box">
+                        <img src="images/adres-icon.svg" alt="">
+                        <h4>
+                            <span>Nazwa Zakładu</span>
+                            <span>ul. Mechaniczna 666</span>
+                            <span>Suwałki 66-666</span>
+                        </h4>
+                    </div>
+
+                    <div class="section-contact-box">
+                        <img src="images/telephone-icon.svg" alt="">
+                        <h4>
+                            <span>Tel. 666-666-666</span>
+                            <span>Tel2. 777-777-777</span>
+                        </h4>
+                    </div>
+
+                    <div class="section-contact-box">
+                        <img src="images/email-icon.svg" alt="">
+                        <h4>
+                            <span>E-mail: kazik@naprawa.pl</span>
+                        </h4>
+                    </div>
+
+                </div>
+
+                <div class="main-right">
+                    <div class="section-contact-map">
+                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?width=453.25&amp;height=457.82&amp;hl=en&amp;q=Wojska%20Polskiego%2076%20Suwa%C5%82ki+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <%- include('./partials/footer.ejs')%>
+
+    </div>
+
+    <script src="scripts/nav.js"></script>
+    
+</body>
+
+</html>

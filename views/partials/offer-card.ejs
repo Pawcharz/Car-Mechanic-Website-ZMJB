@@ -1,0 +1,11 @@
+<div class="offer-card" data-db-id="<%= offer.id %>">
+
+    <img class="offer-card-img" src="data:image/<%=offer.img.contentType%>;base64, <%=offer.img.data.toString('base64')%>" alt="">
+
+    <div class="offer-card-text">
+        <h4><%= offer.name %></h4>
+        <p><%= offer.description %> </p>
+    </div>
+    <span>Zobacz więcej...</span>
+
+</div>

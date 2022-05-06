@@ -1,0 +1,377 @@
+.banner-simple {
+    height: calc(85vh - 6rem);
+    width: 100%;
+    margin-top: 6rem;
+
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top left;
+
+    display: flex;
+
+    .banner-left {
+        height: 100%;
+        width: 100%;
+
+        z-index: 2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+
+        display: flex;
+    }
+    .banner-right {
+        height: 100%;
+        width: 105%;
+
+        clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+        background: #12232E;
+        
+        display: flex;        
+    }
+
+    @media only screen and (max-width: 700px) {
+        height: calc(100vh - 6rem);
+    }
+
+}
+.banner-triple {
+    height: fit-content;
+    width: 100%;
+    margin-top: 6rem;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: 700px) {
+        min-height: calc(80vh - 6rem);
+    }
+    @media only screen and (max-width: 550px) {
+        font-size: 14px;
+    }
+    @media only screen and (max-width: 450px) {
+        font-size: 12px;
+    }
+
+    .banner-top {
+        height: 100%;
+        width: 100%;
+
+        filter: drop-shadow(0px 15px 50px rgba(0, 0, 0, 0.8) );
+
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        @media only screen and (max-width: 700px) {
+            display: flex;
+            filter: none;
+        }
+        .banner-left {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+    
+            @media only screen and (max-width: 700px) {
+                display: none;
+            }
+            display: flex;
+            flex-direction: column;
+        }
+        .banner-right {
+            height: 100%;
+            width: 130%;
+    
+            clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+            transform: translateX(-14%);
+            background: #203647;
+            @media only screen and (max-width: 700px) {
+                width: 100%;
+                background: none;
+                transform: none;
+            }
+
+            z-index: 2;
+            
+            display: flex;    
+            flex-direction: column;
+            
+            h1, h2, h3, h4, h5, h6, p {
+                font-size: 2em;
+                font-weight: 700;
+
+                padding: 3rem 0;
+                
+                max-width: 60%;
+                margin: auto auto auto 25%;
+                @media only screen and (max-width: 800px) {
+                    margin: auto auto auto 25%;
+                }
+                @media only screen and (max-width: 700px) {
+                    max-width: 70%;
+                    margin: auto;
+                }
+            }
+        }
+    }
+    .banner-bottom {
+        height: 100%;
+        width: 100%;
+        padding: 3rem 0;
+        background-color: #12232E;
+        
+        display: flex;
+        h1, h2, h3, h4, h5, h6, p {
+            
+            text-align: justify;
+            max-width: 60%;
+            margin: auto;
+            
+        }
+
+        @media only screen and (max-width: 700px) {
+            height: 150%;
+            background: none;
+
+            h1, h2, h3, h4, h5, h6, p {
+                max-width: 70%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+
+.banner-home {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.8) ), url("../../images/banners/banner-back.png");
+    .banner-left {
+
+        .banner-left-box {
+            margin: auto auto auto 15%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            h1, h2 {
+                font-weight: 700;
+                margin: 0 auto;
+            }
+            h3, h4, h5, h6, p {
+                font-weight: 400;
+                margin: 0 auto;
+            }
+
+            @media only screen and (max-width: 800px) {
+                margin: auto;
+                text-align: center;
+                h1, h2, h3, h4, h5, h6, p {
+                    max-width: 80%;
+                }
+            }
+        }
+        .banner-left-btns {
+            max-width: 90%;
+            margin: 2rem auto 0 0;
+
+            display: flex;
+            gap: 2.5rem;
+            .btn-primary {
+                height: 4rem;
+                max-width: 100%;
+
+                //margin: auto;
+            }
+            @media only screen and (max-width: 800px) {
+                margin: 2rem auto;
+            }
+            @media only screen and (max-width: 550px) {
+                margin: 1rem auto;
+                flex-direction: column;
+                gap: 1.25rem;
+            }
+        }
+    }
+
+    .banner-right {
+
+        img {
+            height: 450px;
+            width: 450px;
+            margin: auto;
+
+            @media only screen and (max-width: 1150px) {
+                height: auto;
+                width: 80%;
+            }
+        }
+        @media only screen and (max-width: 1150px) {
+            width: 70%;
+        }
+        @media only screen and (max-width: 800px) {
+            display: none;
+        }
+        
+    }
+}
+
+.banner-offers {
+
+    @media only screen and (max-width: 700px) {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-oferta.png");
+    }
+
+    .banner-top {
+
+        .banner-left {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-oferta.png");
+        }
+    }
+
+}
+.banner-priceOffers {
+
+    @media only screen and (max-width: 700px) {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-cennik.png");
+    }
+
+    .banner-top {
+
+        .banner-left {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-cennik.png");
+        }
+    }
+
+}
+.banner-opinions {
+    height: fit-content;
+    @media only screen and (max-width: 700px) {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-back.png");
+        min-height: calc(80vh - 6rem);
+    }
+
+    .banner-top {
+
+        .banner-left {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-back.png");
+        }
+        @media only screen and (max-width: 700px) {
+            display: none;
+        }
+    }
+    .banner-bottom {
+        .banner-bottom-main {
+            max-width: 40rem;
+            width: calc(70% - 4rem);
+            padding: 2rem;
+            margin: 2rem auto;
+
+            background-color: white;
+            color: black;
+            border-radius: 2rem;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            h1, h2, h3, h4, h5, h6, p {
+                max-width: none;
+                margin: auto auto auto 0;
+            }
+
+            #icon {
+                height: 4rem;
+                width: 4rem;
+                margin: 2rem auto 0 auto;
+            }
+
+
+            @media only screen and (max-width: 700px) {
+                height: 100%;
+                width: 70%;
+                padding: 0;
+                margin:  auto;
+                background: none;
+                color: white;
+
+                h1, h2, h3 {
+                    font-size: 2em;
+                    font-weight: 700;
+                }
+                h4, h5, h6, p {
+                    font-size: 1.6em;
+                    //font-weight: 400;
+                }
+
+                #icon {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+.banner-contact {
+    height: calc(42.5vh - 6rem);
+    @media only screen and (max-width: 700px) {
+        height: calc(60vh - 6rem);
+        background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-kontakt.jpg");
+        background-position: center;
+    }
+
+    .banner-top {
+
+        .banner-left {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-kontakt.jpg");
+        }
+        @media only screen and (max-width: 700px) {
+            display: none;
+        }
+    }
+    .banner-bottom {
+        display: none;
+
+        
+        h1, h2, h3, h4, h5, h6, a, p {
+            text-align: center;
+        }
+        @media only screen and (max-width: 700px) {
+            display: flex;
+        }
+    }
+
+}
+
+.banner-admin {
+    height: calc(42.5vh - 6rem);
+    @media only screen and (max-width: 700px) {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-back.png");
+    }
+
+    .banner-top {
+
+        .banner-left {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.7) ), url("../../images/banners/banner-back.png");
+        }
+        @media only screen and (max-width: 700px) {
+            display: none;
+        }
+    }
+    .banner-bottom {
+        display: none;
+
+        
+        h1, h2, h3, h4, h5, h6, a, p {
+            text-align: center;
+        }
+        @media only screen and (max-width: 700px) {
+            display: flex;
+        }
+    }
+
+}
