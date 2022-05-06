@@ -1,8 +1,8 @@
 # ZMJB-Mechanic-website
 
 ## Background
-    It is the website build for my friend's local car mechanic.
-    I built it with the use of a already prepared design.
+It is the website build for my friend's local car mechanic.
+I built it with the use of a already prepared design.
 
 ## Features
 - Opinions System - Users can leave their opinion in the "opinions" section which will be displayed after admin validation.
