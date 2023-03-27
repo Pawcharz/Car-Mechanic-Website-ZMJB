@@ -24,6 +24,3 @@ I developed it with the use of already prepared design.
 - use "git install" to install all dependencies
 - replace environmental variables in .env file with your own
 - to run project use "node server.js"
-
-## Link
-[zmjb.pl](http://www.zmjb.pl/)
