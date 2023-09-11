@@ -2,7 +2,7 @@
 
 ## Background
 It is the website built for my friend's local car mechanic.
-I developed it with the use of already prepared design.
+I implemented the design provided by the customer.
 
 ## Features
 - Opinions System - Users can leave their opinion in the "opinions" section which will be displayed after admin validation.
